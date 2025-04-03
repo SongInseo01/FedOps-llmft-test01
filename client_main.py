@@ -64,35 +64,6 @@ def main(cfg: DictConfig) -> None:
     """
     Model Load
     """
-    # def load_model(model_name: str, quantization: int, gradient_checkpointing: bool, peft_config):
-    #     if quantization == 4:
-    #         bnb_config = BitsAndBytesConfig(
-    #             load_in_4bit=True,
-    #             bnb_4bit_compute_dtype=torch.float16,
-    #             bnb_4bit_use_double_quant=True,
-    #             bnb_4bit_quant_type="nf4",
-    #         )
-    #     elif quantization == 8:
-    #         bnb_config = BitsAndBytesConfig(
-    #             load_in_8bit=True
-    #         )
-    #     else:
-    #         bnb_config = None  # 양자화 안함
-
-    #     model = AutoModelForCausalLM.from_pretrained(
-    #         model_name,
-    #         quantization_config=bnb_config,
-    #         torch_dtype=torch.float16,
-    #         device_map="auto",
-    #     )
-
-    #     model = prepare_model_for_kbit_training(model, use_gradient_checkpointing=gradient_checkpointing)
-
-    #     if gradient_checkpointing:
-    #         model.config.use_cache = False
-
-    #     return get_peft_model(model, peft_config)
-
     
     quantization = 4
     gradient_checkpoining = True
